@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'entity/status.html' %}
+
+<br>
+
+<div class="row">
+  <div class="col-md-3">
+    <h5>RULES:</h5>
+    <hr>
+    <div class="card card-body">
+      <a class="btn btn-primary btn-sm btn-block" href="">Create Rule</a>
+      <table class="table table-sm">
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Rule Store</th>
+          <th>Description</th>
+          <th>Treatment Category</th>
+        </tr>
+        {% for rule in rules %}
+        <tr>
+          <td><a class="btn btn-sm btn-info" href="">View</a></td>
+          <td>{{rule.name}}</td>
+          <td>{{rule.rule_store}}</td>
+          <td>{{rule.description}}</td>
+          <td>{{rule.treatment_category}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+  <div class="card card-body">
+    <a class="btn btn-primary btn-sm btn-block" href="">Create Rule Packet</a>
+    <table class="table table-sm">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Rule Store</th>
+        <th>Description</th>
+        <th>Treatment Category</th>
+      </tr>
+      {% for rpkt in rulepackets %}
+      <tr>
+        <td><a class="btn btn-sm btn-info" href="">View</a></td>
+        <td>{{rpkt.name}}</td>
+        <td>{{rpkt.rule_store}}</td>
+        <td>{{rpkt.description}}</td>
+        <td>{{rpkt.treatment_category}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+  
+</div>
+
+{% endblock %}

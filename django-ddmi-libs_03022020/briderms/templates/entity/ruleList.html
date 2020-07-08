@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Rules</h5>
+		</div>
+		<div class="card card-body">
+			<table class="table">
+				<tr>
+          <th>Rule Name</th>
+          <th>Description</th>
+          <th>Treatment Category</th>
+          <th>Rule Store</th>
+          <th>Update</th>
+          <th>Remove</th>
+				</tr>
+
+        {% for rule in rules %}
+        <tr>
+          <td>{{rule.name}}</td>
+          <td>{{rule.description}}</td>
+          <td>{{rule.treatment_category}}</td>
+          <td>{{rule.rule_store.rule_store_name}}</td>
+          <td><a class="btn btn-sm btn-info" href="">Update</a></td>
+          <td><a class="btn btn-sm btn-danger" href="">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

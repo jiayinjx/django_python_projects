@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Rule Packets</h5>
+		</div>
+		<div class="card card-body">
+			<table class="table">
+				<tr>
+          <th>Rule Packet Name</th>
+          <th>Description</th>
+          <th>Customized Message</th>
+          <th>Treatment Category</th>
+          <th>Taggregation</th>
+          <th>Update</th>
+          <th>Remove</th>
+				</tr>
+
+        {% for rpkt in rulepackets %}
+        <tr>
+          <td>{{rpkt.name}}</td>
+          <td>{{rpkt.description}}</td>
+          <td>{{rpkt.customized_message}}</td>
+          <td>{{rpkt.treatment_category}}</td>
+          <td>{{rpkt.taggregation}}</td>
+          <td><a class="btn btn-sm btn-info" href="">Update</a></td>
+          <td><a class="btn btn-sm btn-danger" href="">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
